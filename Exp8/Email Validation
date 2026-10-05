@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+
+<body>
+
+    <input type="text" id="emailId">
+    <button onclick="validateEmail()">Validate</button>
+
+    <div id="success" style="color: green; display: none;">
+        Congratulations!!!<br>
+        Entered Email ID is Valid.
+    </div>
+
+    <div id="error" style="color: red; display: none;">
+        Oops!!!<br>
+        Entered Email ID is Invalid.
+    </div>
+
+    <script>
+        function validateEmail() {
+            const emailEle = document.querySelector("#emailId");
+            let email = emailEle.value;
+
+            const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (emailRegex.test(email)) {
+                document.querySelector("#success").style.display = "block";
+                document.querySelector("#error").style.display = "none";
+            } else {
+                document.querySelector("#error").style.display = "block";
+                document.querySelector("#success").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
