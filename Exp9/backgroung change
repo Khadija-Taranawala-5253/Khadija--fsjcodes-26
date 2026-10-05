@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center; background-color: aquamarine;">
+
+    <h1>Welcome To My Site</h1>
+    <h2>Khadija</h2>
+
+    <button onclick="changeBackground()">
+        Change Background Color
+    </button>
+
+    <script>
+
+        // Function to change the background color
+        function changeBackground() {
+
+            // List of colors
+            let colors = [
+                "yellow",
+                "blue",
+                "olive",
+                "#674534",
+                "#128a32"
+            ];
+
+            // Select the body element
+            const bodyEle = document.querySelector("body");
+
+            // Generate a random number
+            let randomIndex =
+                Math.floor(Math.random() * colors.length);
+
+            // Change the background color
+            bodyEle.style.backgroundColor = colors[randomIndex];
+        }
+
+        // Set interval to 5 seconds
+        let interval = 5000;
+
+        // Automatically change background every 5 seconds
+        setInterval(() => {
+            changeBackground();
+        }, interval);
+
+    </script>
+
+</body>
+</html>
